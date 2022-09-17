@@ -37,3 +37,4 @@ Place this script in the folder containing lab virtual machines. It expects the 
 ## LINKS
  - https://yaksas.in
  - https://github.com/yaksas443/Invoke-AKSH
+ - https://ellitedevs.in/invoke-aksh-and-easily-manage-your-local-lab/
