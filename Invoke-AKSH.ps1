@@ -43,6 +43,7 @@ function Invoke-AKSH
   .LINK
   https://yaksas.in
   https://github.com/yaksas443/Invoke-AKSH
+  https://ellitedevs.in/invoke-aksh-and-easily-manage-your-local-lab/
 #>
 
 param(
