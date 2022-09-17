@@ -23,7 +23,11 @@ Place this script in the folder containing lab virtual machines. It expects the 
         - LAB-VM4
             - LAB-VM4.vmx
         ....
- 
+ ## INSTRUCTIONS TO EXECUTE
+ - Import Invoke-AKSH.ps1 - `. .\Invoke-AKSH.ps1`
+ - See command help - `Get-Help Invoke-AKSH -Full`
+ - Follow the examples.
+
  ## EXAMPLES
   
  - `PS> Invoke-AKSH -action start`
