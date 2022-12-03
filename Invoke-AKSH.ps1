@@ -43,7 +43,6 @@ function Invoke-AKSH
   .LINK
   https://yaksas.in
   https://github.com/yaksas443/Invoke-AKSH
-  https://ellitedevs.in/invoke-aksh-and-easily-manage-your-local-lab/
 #>
 
 param(
@@ -71,7 +70,9 @@ function check_previousSnapshot {
     $prevSnapshot = perform_action -action "listsnapshots" -vmxFilename $vmxFilename -snapshotName "" | Select-String "Total snapshots:" | Out-String
     $snapshotCount = [int]$($prevSnapshot.substring(19,1))
     if ($snapshotCount -gt 0) {
-        $prevSnapshotName = perform_action -action "listsnapshots" -vmxFilename $vmxFilename -snapshotName "" | Select-String -Pattern ($dir.Name) | Select-Object -First 1 | Out-String
+        $dirName = $dir.Name -replace "\(" , "\("
+        $dirName = $dirName -replace "\)" , "\)"
+        $prevSnapshotName = perform_action -action "listsnapshots" -vmxFilename $vmxFilename -snapshotName "" | Select-String -Pattern ($dirName) | Select-Object -First 1 | Out-String
         $prevSnapshotName = $($prevSnapshotName.TrimEnd())
         $prevSnapshotName = $($prevSnapshotName.TrimStart())
         Write-Host "[+] Snapshot found for :"$($dir.Name)
