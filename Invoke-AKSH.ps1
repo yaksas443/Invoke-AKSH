@@ -102,7 +102,7 @@ if ($action -ne "start" -and $action -ne "stop" -and $action -ne "suspend" -and 
 else {
     foreach($dir in $dirList) {
         $vmxFile = $null
-        $vmxFile = Get-ChildItem .\$($dir.Name)\ -Filter "*.vmx" | select name
+        $vmxFile = Get-ChildItem .\$($dir.Name)\ -Filter "*.vmx" | Where-Object { $_.Extension -eq ".vmx" } |  select name
         if ($vmxFile.Name.length -gt 0)
             {
                 $snapshotName = ""
